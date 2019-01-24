@@ -1,5 +1,7 @@
 This repository is meant to be used as a template for writing research papers using pandoc and markdown. It's the solution I've found so far that I like best as an alternative to WYSIWYG solutions like Word. LaTeX is overly complicated, and solutions like RMarkdown/Bookdown are basically just this solution with more requirements to get up and running (although they have some features that some people might find useful).
 
+The paper.md file is the actual template document, while the output.pdf file shows how it renders.
+
 The following is an unorganized list of links and what not that I've found useful and need to incorporate more fully into this README
 
 http://arthurcgusmao.com/academia/2018/01/27/markdown-pandoc.html

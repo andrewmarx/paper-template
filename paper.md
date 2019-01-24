@@ -57,4 +57,4 @@ Referring to equation @eq:description
 
 # References
 
-If everything is setup correctly, references are automatically appended to the end of the document
+*If everything is setup correctly, references are automatically appended to the end of the document*

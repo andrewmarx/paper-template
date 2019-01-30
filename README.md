@@ -16,15 +16,16 @@ https://stackoverflow.com/questions/25042901/how-to-use-latex-equation-environme
 
 https://tex.stackexchange.com/questions/111868/pandoc-how-can-i-get-numbered-latex-equations-to-show-up-in-both-pdf-and-html-o
 
+https://github.com/jgm/pandoc/issues/3148
 
 Use this command to produce pdf:
 
-pandoc paper.md -o output.pdf --filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-citeproc
+pandoc paper.md -o out/output.pdf --filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-citeproc
 
 --number-sections
 
 Use this command to produce html:
 
-pandoc paper.md -s -o output.html --filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-citeproc --mathjax
+pandoc paper.md -s -o out/output.html --filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-citeproc --mathjax
 
 pandoc paper.md -s -o output.html --filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-citeproc --filter=pandoc-crossref

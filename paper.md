@@ -22,6 +22,8 @@ geometry: margin=1.0in
 #geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
 header-includes:
     - \usepackage{times}
+    - \usepackage[mathlines,displaymath]{lineno}
+    - \linenumbers
 urlcolor: blue
 
 

@@ -89,11 +89,11 @@ And everything is formatted automatically for the journal Ecology using the csl 
 
 Where this design becomes especially useful is when you are submitting manuscripts for different journals with different citation formats. All you have to do is specify a different csl file and run the command to produce the document. You should never have to format citations manually.
 
-#### math
+#### Math
 
 Using LaTeX is a very powerful way to get very nice looking, consistently formatted mathematical symbols and equations. Here is a good introductory post on the topic: https://meta.stackexchange.com/questions/68388/there-should-be-universal-latex-mathjax-guide-for-sites-supporting-it/70559#70559
 
-To start, you can either embed math inline, or have it produced on its own line. You can then decide which math blocks have an equation number assigned to it (with the actual numbers determined automatically). Finally, you can make references to numbered equations (again, with the number part being produced automatically).
+To start, you can either embed math inline, or have it produced on its own line. You can then decide which math blocks have an equation number assigned to it (with the actual numbers determined automatically). Finally, you can make references to numbered equations (again, with the number part being produced automatically). Examples of this are in the paper.md template
 
 ## Generating the output
 

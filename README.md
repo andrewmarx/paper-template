@@ -2,7 +2,7 @@
 
 This repository is meant to be used as a template for writing research papers using pandoc and markdown. It's the solution I've found so far that I like best as an alternative to WYSIWYG solutions like Word. LaTeX is overly complicated, and solutions like RMarkdown/Bookdown are basically just this solution with more requirements to get up and running (although they have some features that some people might find useful).
 
-The paper.md file is the actual template document, while the output.* files show how it renders in different formats.
+It is important to realize that this approach will not necessarily format everything the way you would want for a final printable document. Instead, it is meant more for improving the writing process itself by automatically providing a document that is formatted to resemble a manuscript. Then once the content of the paper is finished, other tools will likely be needed to perform/tweak the final formatting to produce the final document.
 
 # Instructions
 
@@ -37,9 +37,41 @@ The *pandoc-eqnos* filter automatically numbers equations. It's a python package
 pip install pandoc-eqnos
 ```
 
-### Writing the documentclass
+### File overview
 
-*TODO: details about line numbers, citations, cross references, etc*
+### Writing the Document
+
+The paper.md template has two distinct sections. The first is the YAML header, which is used to provide data about the document. This includes things like the title, author(s), basic formatting, locations of useful files, etc. The rest of the template is markdown, and is where all of the actual written content of the paper is located.
+
+##### YAML header
+
+The YAML header starts and ends with three hyphens `---`
+
+The first part of the YAML should be fairly self explanatory; it provides the title, abstract, and a list of authors
+
+```
+title: "Really Cool Title"
+abstract: "A mind-blowing abstract."
+author:
+- First Name
+- Second Name
+- Third Name
+```
+
+The second part provides information needed for automatically formatting the references and citations
+
+```
+bibliography:
+    - ./res/bib/bibliography.bib
+csl: ./res/csl/ecology.csl
+link-citations: true
+```
+
+The `bibliography:` option allows users to define one or more bibtex files that contain information about the papers that will be cited. Any reference manager should be able to export bibtex files for you. Papers that are not cited by the document do not need to be removed from the bibtex file; pandoc will only put cited papers in the references section.
+
+The `csl:` option provides a link to a csl file, which contains the actual information for formatting citations. In this case, the template document uses formatting guidlines from the journal Ecology. To use the format of another journal, just replace it with the csl file for another journal. The best place to begin looking for specific csl files is here: https://citationstyles.org/authors/
+
+##### Markdown Content
 
 ### Generating the output
 
@@ -63,7 +95,7 @@ pandoc paper.md -s -o out/output.html --filter=pandoc-fignos --filter=pandoc-eqn
 
 If all works well, you should get a html document in the *out/* folder.
 
-*NOTE: Currently, the abstract is not included in the html output. I haven't take the time yet to figure out why or come up with a solution.*
+*NOTE: Currently, the abstract and line numbers are not included in the html output.*
 
 # Useful Links
 

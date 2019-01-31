@@ -2,40 +2,39 @@
 title: "Really Cool Title"
 abstract: "A mind-blowing abstract."
 author:
-- First Name
-- Second Name
-- Third Name
+  - First Name
+  - Second Name
+  - Third Name
 
-###
-### Bibliography settings
-###
+
+# Bibliography settings
+
 bibliography:
-    - ./res/bib/bibliography.bib
+  - ./res/bib/bibliography.bib
 csl: ./res/csl/ecology.csl
 link-citations: true
 
 
-###
-### Formatting settings
-###
+# Formatting
+
 documentclass: article
 fontsize: 12pt
 geometry: margin=1.0in
 #geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
 header-includes:
-    - \usepackage{times}
-    - \usepackage[mathlines,displaymath]{lineno}
-    - \linenumbers
+  - \usepackage{times}
+  - \usepackage[mathlines,displaymath]{lineno}
+  - \linenumbers
 urlcolor: blue
 
 
-###
-### Markdown Preview Enhanced package settings
-###
+
+# Output
+
 output:
-    pdf_document:
-        toc: false
-        number_sections: false
+  pdf_document:
+    toc: false
+    number_sections: false
 ---
 
 # Introduction

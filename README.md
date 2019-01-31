@@ -79,13 +79,9 @@ There are numerous guides available for learning markdown (https://github.com/ad
 
 One of the coolest features of using this setup is the way citations are automatically handled. To create citations, you use the article keys in the bibtex file. These keys are unique identifies for each of your papers. Generally, your reference manager should be providing them for you, commonly in a format that includes the first authors last name followed by the year of publication, which usually makes it easy to guess them. In the case of the example bibliography included in this template, the key is *Waples2015*. There are cases where the key might not follow this exact format, such as when you have two papers from the same year by the same author. In this case, the reference manager will modify one or both to make them unique. You can also edit the keys manually, if you wish. Ultimately, you just have to be careful about double checking the citations in the produced document.
 
-Once you know the key, you perform citations one of two ways. The first is parenthetical, which is done using square brackets: `Test citation [@Waples2015].`
+Once you know the key, you perform citations one of two ways. The first is parenthetical, which is done using square brackets: `Test citation [@Waples2015].` which produces `Test citation (Waples and Allendorf 2015).` in the final document.
 
-Which produces `Test citation (Waples and Allendorf 2015).` in the final document.
-
-The second way to perform a citation is without the square brackets: `Second test citation by @Waples2015.`
-
-Which produces `Second test citation by Waples and Allendorf (2015).` in the final document.
+The second way to perform a citation is without the square brackets: `Second test citation by @Waples2015.` which produces `Second test citation by Waples and Allendorf (2015).` in the final document.
 
 At the end of the document, the full citation is automatically inserted in the proper order: `Waples, R. S., and F. Allendorf. 2015. Testing for hardy-weinberg proportions: Have we lost the plot? Journal of Heredity 106:1–19.`
 

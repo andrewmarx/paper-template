@@ -118,29 +118,3 @@ pandoc paper.md -s -o out/output.html --filter=pandoc-fignos --filter=pandoc-eqn
 If all works well, you should get a html document in the *out/* folder.
 
 *NOTE: Currently, the abstract and line numbers are not included in the html output.*
-
-# Useful Links
-
-http://arthurcgusmao.com/academia/2018/01/27/markdown-pandoc.html
-
-https://ctan.org/pkg/psnfss
-
-https://github.com/tomduck/pandoc-fignos#installation
-
-https://blog.kdheepak.com/writing-papers-with-markdown.html
-
-https://stackoverflow.com/questions/25042901/how-to-use-latex-equation-environment-in-pandoc-markdown
-
-https://tex.stackexchange.com/questions/111868/pandoc-how-can-i-get-numbered-latex-equations-to-show-up-in-both-pdf-and-html-o
-
-https://github.com/jgm/pandoc/issues/3148
-
-# Old stuff. Ignore.
-
-pandoc paper.md -o out/output.pdf --filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-citeproc
-
---number-sections
-
-pandoc paper.md -s -o out/output.html --filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-citeproc --mathjax
-
-pandoc paper.md -s -o output.html --filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-citeproc --filter=pandoc-crossref

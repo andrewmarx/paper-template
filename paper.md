@@ -1,8 +1,10 @@
 ---
 title: "Really Cool Title"
 abstract: "A mind-blowing abstract."
-author: Your Name
-
+author:
+- First Name
+- Second Name
+- Third Name
 
 ###
 ### Bibliography settings

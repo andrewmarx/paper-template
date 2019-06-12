@@ -95,6 +95,40 @@ Using LaTeX is a very powerful way to get very nice looking, consistently format
 
 To start, you can either embed math inline, or have it produced on its own line. You can then decide which math blocks have an equation number assigned to it (with the actual numbers determined automatically). Finally, you can make references to numbered equations (again, with the number part being produced automatically). Examples of this are in the paper.md template
 
+#### Figure numbering and cross-reference
+
+See: https://github.com/tomduck/pandoc-fignos 
+
+To mark a figure for numbering, add an identifier to its attributes:
+
+```
+![Caption.](image.png){#fig:id}
+```
+
+Alternatively, use reference link attributes. The prefix #fig: is required. id should be replaced with a unique string composed of letters, numbers, dashes and underscores. If id is omitted then the figure will be numbered but unreferenceable.
+
+To reference the figure, use
+```
+@fig:id
+```
+
+#### Equation numbering and cross-reference
+
+see: https://github.com/tomduck/pandoc-eqnos
+
+To mark an equation for numbering, add an identifier to its attributes:
+
+```
+$$ y = mx + b $$ {#eq:id}
+```
+The prefix #eq: is required. id should be replaced with a unique string composed of letters, numbers, dashes and underscores. If id is omitted then the equation will be numbered but unreferenceable.
+
+To reference the equation, use
+
+```
+@eq:id
+```
+
 ## Generating the output
 
 ### pdf

@@ -114,7 +114,7 @@ To reference the figure, use
 
 #### Table numbering and cross-reference
 
-see: https://github.com/tomduck/pandoc-tablenos
+See: https://github.com/tomduck/pandoc-tablenos
 
 
 To mark a table for numbering, add an id to its attributes:
@@ -134,7 +134,7 @@ To reference the table, use
 
 #### Equation numbering and cross-reference
 
-see: https://github.com/tomduck/pandoc-eqnos
+See: https://github.com/tomduck/pandoc-eqnos
 
 To mark an equation for numbering, add an identifier to its attributes:
 
@@ -156,7 +156,7 @@ To reference the equation, use
 To create the pdf, use the following command:
 
 ```
-pandoc paper.md -o out/output.pdf --filter=pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --filter=pandoc-citeproc
+pandoc paper.md -o out/output.pdf --filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-tablenos --filter=pandoc-citeproc
 ```
 
 If all works well, you should get a pdf document in the *out/* folder.
@@ -169,6 +169,8 @@ To create the html, use the following command:
 pandoc paper.md -s -o out/output.html --filter=pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --filter=pandoc-citeproc --mathjax
 ```
 
+If all works well, you should get a html document in the *out/* folder.
+
 ### DOCX
 
 To create the docx (doc is also available but with less customization), use the following command:
@@ -177,6 +179,5 @@ To create the docx (doc is also available but with less customization), use the 
 pandoc paper.md -s -o out/output.docx --filter=pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --filter=pandoc-citeproc --mathjax
 ```
 
-If all works well, you should get a html document in the *out/* folder.
 
 *NOTE: Currently, the abstract and line numbers are not included in the html output.*

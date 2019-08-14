@@ -95,6 +95,60 @@ Using LaTeX is a very powerful way to get very nice looking, consistently format
 
 To start, you can either embed math inline, or have it produced on its own line. You can then decide which math blocks have an equation number assigned to it (with the actual numbers determined automatically). Finally, you can make references to numbered equations (again, with the number part being produced automatically). Examples of this are in the paper.md template
 
+#### Figure numbering and cross-reference
+
+See: https://github.com/tomduck/pandoc-fignos 
+
+To mark a figure for numbering, add an identifier to its attributes:
+
+```
+![Caption.](image.png){#fig:id}
+```
+
+Alternatively, use reference link attributes. The prefix #fig: is required. id should be replaced with a unique string composed of letters, numbers, dashes and underscores. If id is omitted then the figure will be numbered but unreferenceable.
+
+To reference the figure, use
+```
+@fig:id
+```
+
+#### Table numbering and cross-reference
+
+see: https://github.com/tomduck/pandoc-tablenos
+
+
+To mark a table for numbering, add an id to its attributes:
+```
+A B
+- -
+0 1
+
+Table: Caption. {#tbl:id}
+```
+The prefix #tbl: is required. id should be replaced with a unique identifier composed of letters, numbers, dashes and underscores. If id is omitted then the figure will be numbered but unreferenceable.
+
+To reference the table, use
+```
+@tbl:id
+```
+
+#### Equation numbering and cross-reference
+
+see: https://github.com/tomduck/pandoc-eqnos
+
+To mark an equation for numbering, add an identifier to its attributes:
+
+```
+$$ y = mx + b $$ {#eq:id}
+```
+The prefix #eq: is required. id should be replaced with a unique string composed of letters, numbers, dashes and underscores. If id is omitted then the equation will be numbered but unreferenceable.
+
+To reference the equation, use
+
+```
+@eq:id
+```
+
 ## Generating the output
 
 ### pdf
@@ -102,7 +156,7 @@ To start, you can either embed math inline, or have it produced on its own line.
 To create the pdf, use the following command:
 
 ```
-pandoc paper.md -o out/output.pdf --filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-citeproc
+pandoc paper.md -o out/output.pdf --filter=pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --filter=pandoc-citeproc
 ```
 
 If all works well, you should get a pdf document in the *out/* folder.
@@ -112,7 +166,15 @@ If all works well, you should get a pdf document in the *out/* folder.
 To create the html, use the following command:
 
 ```
-pandoc paper.md -s -o out/output.html --filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-citeproc --mathjax
+pandoc paper.md -s -o out/output.html --filter=pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --filter=pandoc-citeproc --mathjax
+```
+
+### DOCX
+
+To create the docx (doc is also available but with less customization), use the following command:
+
+```
+pandoc paper.md -s -o out/output.docx --filter=pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --filter=pandoc-citeproc --mathjax
 ```
 
 If all works well, you should get a html document in the *out/* folder.

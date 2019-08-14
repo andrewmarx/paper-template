@@ -171,6 +171,8 @@ pandoc paper.md -s -o out/output.html --filter=pandoc-fignos --filter=pandoc-eqn
 
 If all works well, you should get a html document in the *out/* folder.
 
+*NOTE: Currently, the abstract and line numbers are not included in the html output.*
+
 ### DOCX
 
 To create the docx (doc is also available but with less customization), use the following command:
@@ -178,6 +180,3 @@ To create the docx (doc is also available but with less customization), use the 
 ```
 pandoc paper.md -s -o out/output.docx --filter=pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --filter=pandoc-citeproc --mathjax
 ```
-
-
-*NOTE: Currently, the abstract and line numbers are not included in the html output.*

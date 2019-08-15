@@ -15,7 +15,7 @@ csl: ./res/csl/ecology.csl
 link-citations: true
 
 
-# Formatting
+# Formatting Settings
 
 documentclass: article
 fontsize: 12pt
@@ -28,14 +28,14 @@ header-includes:
 urlcolor: blue
 
 
-
-# Output
+# Output Settings
 
 output:
   pdf_document:
     toc: false
     number_sections: false
 ---
+
 
 # Introduction
 

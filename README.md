@@ -2,7 +2,7 @@
 
 This repository is meant to be used as a template for writing research papers using pandoc and markdown. It's the solution I've found so far that I like best as an alternative to WYSIWYG solutions like Word. LaTeX is overly complicated, and solutions like RMarkdown/Bookdown are basically just this solution with more requirements to get up and running (although they have some features that some people might find useful).
 
-It is important to realize that this approach will not necessarily format everything the way you would want for a final printable document. Instead, it is meant more for improving the writing process itself by providing a document that is automatically formatted to resemble a manuscript. Then once the content of the paper is finished, other tools will likely be needed to perform/tweak the final formatting to produce the final document.
+It is important to realize that this approach will not necessarily format everything the way you would want for a final printable document. Instead, it is meant more for improving the writing process by providing a document that is automatically formatted to resemble a manuscript. Then once the content of the paper is finished, other tools will likely be needed to cleanup the final formatting.
 
 # Instructions
 
@@ -41,7 +41,7 @@ pip install pandoc-eqnos
 
 ## Writing the Document
 
-The paper.md template has two distinct sections. The first is the YAML header, which is used to provide data about the document. This includes things like the title, author(s), basic formatting, locations of useful files, etc. The rest of the template is markdown, and is where all of the actual written content of the paper is located.
+The examples have two distinct sections. The first is the YAML header, which is used to provide data about the document. This includes things like the title, author(s), basic formatting, locations of useful files, etc. The rest of the examples is markdown, and is where all of the written content of the paper is located.
 
 ### YAML header
 
@@ -93,11 +93,11 @@ Where this design becomes especially useful is when you are submitting manuscrip
 
 Using LaTeX is a very powerful way to get very nice looking, consistently formatted mathematical symbols and equations. Here is a good introductory post on the topic: https://meta.stackexchange.com/questions/68388/there-should-be-universal-latex-mathjax-guide-for-sites-supporting-it/70559#70559
 
-To start, you can either embed math inline, or have it produced on its own line. You can then decide which math blocks have an equation number assigned to it (with the actual numbers determined automatically). Finally, you can make references to numbered equations (again, with the number part being produced automatically). Examples of this are in the paper.md template
+To start, you can either embed math inline, or have it produced on its own line. You can then decide which math blocks have an equation number assigned to it (with the actual numbers determined automatically). Finally, you can make references to numbered equations (again, with the number part being produced automatically).
 
 #### Figure numbering and cross-reference
 
-See: https://github.com/tomduck/pandoc-fignos 
+See: https://github.com/tomduck/pandoc-fignos
 
 To mark a figure for numbering, add an identifier to its attributes:
 
@@ -115,7 +115,6 @@ To reference the figure, use
 #### Table numbering and cross-reference
 
 See: https://github.com/tomduck/pandoc-tablenos
-
 
 To mark a table for numbering, add an id to its attributes:
 ```
@@ -156,7 +155,7 @@ To reference the equation, use
 To create the pdf, use the following command:
 
 ```
-pandoc paper.md -o out/output.pdf --filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-tablenos --filter=pandoc-citeproc
+pandoc example1.md -o out/example1.pdf --filter=pandoc-fignos --filter=pandoc-eqnos --filter=pandoc-tablenos --filter=pandoc-citeproc
 ```
 
 If all works well, you should get a pdf document in the *out/* folder.
@@ -166,17 +165,22 @@ If all works well, you should get a pdf document in the *out/* folder.
 To create the html, use the following command:
 
 ```
-pandoc paper.md -s -o out/output.html --filter=pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --filter=pandoc-citeproc --mathjax
+pandoc example1.md -s -o out/example1.html --filter=pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --filter=pandoc-citeproc --mathjax
 ```
 
 If all works well, you should get a html document in the *out/* folder.
 
-*NOTE: Currently, the abstract and line numbers are not included in the html output.*
+*NOTE: The abstract and line numbers are not included in the html output.*
 
 ### DOCX
 
 To create the docx (doc is also available but with less customization), use the following command:
 
 ```
-pandoc paper.md -s -o out/output.docx --filter=pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --filter=pandoc-citeproc --mathjax
+pandoc example1.md -s -o out/example1.docx --filter=pandoc-fignos --filter=pandoc-eqnos --filter pandoc-tablenos --filter=pandoc-citeproc --mathjax
 ```
+
+If all works well, you should get a docx document in the *out/* folder.
+
+
+*NOTE: Line numbers are not included in the docx output and must be enabled in Word.*

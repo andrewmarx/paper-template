@@ -1,0 +1,21 @@
+This file contains some stuff I had to do for getting this running on a new ubuntu-based system during summer 2020
+
+1) by default python 2.7 is installed and used, which caused issues, possibly because it was deprecated earlier this year. I had to force ubuntu to use python3 by running "alias python=python3" in the commandline. This is only temporary, and can be made permanent by adding to .bashrc. Be warned, making it permanent may cause issues for other programs that depend on 2.7
+
+2) Apparently it is not recommended to run pip using sudo. Additionally, it's generally more reliable to not run pip directly from the commandline, but instead to run it using python. For example:
+
+python -m pip --install --user pandoc-fignos
+
+If you get a PATH related warning, you may need to add whatever path was listed to your PATH environment variable. In my case, this was /home/username/.local/bin
+
+3) You can use "which" to test that the pandoc packages are installed. For example:
+
+which pandoc-fignos
+
+The result should be a path showing where it is located
+
+4) For LaTeX, I had to run:
+
+sudo apt-get install lmodern
+
+To fix an error related to sty files.
